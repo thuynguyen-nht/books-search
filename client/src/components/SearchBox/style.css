@@ -1,0 +1,14 @@
+.searchBox{
+    background-color: bisque;
+    
+}
+/* .form-group{
+    width: 80%;
+} */
+.searhInputBox{
+    text-align: center;
+    margin: auto 20px;
+}
+#search-input, #submit-search{
+  margin: 10px;
+}
