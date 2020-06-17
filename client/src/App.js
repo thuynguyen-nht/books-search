@@ -25,8 +25,8 @@ function App() {
           pauseOnHover
         />
         <Switch>
-          <Route exact path="/" component={Search} />
-          <Route exact path="/books" component={Saved} />
+          <Route exact path="/" component={Search} g />
+          <Route path="/books" component={Saved} />
           <Route exact path="/books/:id" component={null} />
           <Route component={NoMatch} />
         </Switch>
