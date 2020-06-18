@@ -23,7 +23,7 @@ class Search extends Component {
             .get(url)
             .then(res => {
                 console.log(res);
-                this.displayRes(res.data);
+                this.displayResults(res.data);
             })
             .catch(err => console.log(err));
     }
