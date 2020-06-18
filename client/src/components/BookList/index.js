@@ -1,10 +1,18 @@
 import React from 'react';
-import Details from '../Details'
 
-export default function SearchResults() {
+
+
+// BookList renders a bootstrap list item
+export default function BookList({ children }) {
     return (
-        <div>
-            <Details />
-        </div>
-    )
+        <ul className="list-group">{children}</ul>
+    );
 }
+
+// export default function SearchResults() {
+//     return (
+//         <div>
+//             <Details />
+//         </div>
+//     )
+// }

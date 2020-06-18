@@ -2,7 +2,7 @@ import React from "react";
 
 export default function EmptyList() {
     return (
-        <div>
+        <div className="container">
             <h2>No Books To Display</h2>
         </div>
     )

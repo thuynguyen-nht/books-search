@@ -6,6 +6,7 @@ import SearchBox from '../../components/SearchBox';
 import BookList from '../../components/BookList';
 import Button from '../../components/Button';
 import EmptyList from '../../components/EmptyList'
+import Details from '../../components/Details'
 
 class Search extends Component {
     state = {
@@ -60,9 +61,35 @@ class Search extends Component {
                     </div>
                 </form>
                 {(this.state.books && this.state.books.length > 0) ?
-                    <BookList
+                    <BookList>
+                        {this.state.books.map(book => {
+                            return (
+                                <div>
+                                    <Details
+                                        key={book.id}
+                                        authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
+                                        title={book.volumeInfo.title}
+                                        description={book.volumeInfo.description ?
+                                            book.volumeInfo.description : "No Description Available"}
+                                        link={book.volumeInfo.infoLink}
+                                        thumbnail={book.volumeInfo.imageLinks.thumbnail ?
+                                            book.volumeInfo.imageLinks.thumbnail : "#"}
+                                    />
 
-                    />
+                                    {/* <AddBookBtn
+                                        authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
+                                        title={book.volumeInfo.title}
+                                        description={book.volumeInfo.description ?
+                                            book.volumeInfo.description : "No Description Available"}
+                                        link={book.volumeInfo.infoLink}
+                                        thumbnail={book.volumeInfo.imageLinks.thumbnail ?
+                                            book.volumeInfo.imageLinks.thumbnail : "#"}
+
+                                    /> */}
+                                </div>
+                            )
+                        })}
+                    </BookList>
                     :
                     <EmptyList />
                 }
