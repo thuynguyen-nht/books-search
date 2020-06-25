@@ -1,9 +1,10 @@
 import React from 'react'
 import './style.css'
 
+
 export default function Details(props) {
     return (
-        <div className="book-details container my-3">
+        <>
             <div className="row pt-3">
                 <div className="col-md">
                     <div>
@@ -18,7 +19,6 @@ export default function Details(props) {
                         className="btn btn-info mx-1"
                         href={props.link}
                     >VIEW</a>
-                    <button type="button" className="btn btn-info mx-1" >SAVE</button>
                 </div>
 
             </div>
@@ -30,7 +30,7 @@ export default function Details(props) {
                 </div>
             </div>
 
-        </div>
+        </>
     )
 }
 

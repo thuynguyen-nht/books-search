@@ -2,16 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
-import NoMatch from "./pages/NoMatch";
+// import NoMatch from "./pages/NoMatch";
 import './App.css';
 import Navbar from "./components/Navbar";
 import { ToastContainer, Zoom } from 'react-toastify';
+import Jumbotron from './components/Jumbotron';
 
 function App() {
   return (
     <Router>
       <div>
         <Navbar />
+        <Jumbotron />
         <ToastContainer
           position="top-center"
           autoClose={3000}
@@ -26,9 +28,9 @@ function App() {
         />
         <Switch>
           <Route exact path="/" component={Search} g />
-          <Route path="/books" component={Saved} />
+          <Route path="/bookshelf" component={Saved} />
           <Route exact path="/books/:id" component={null} />
-          <Route component={NoMatch} />
+          <Route component={null} />
         </Switch>
       </div>
     </Router>

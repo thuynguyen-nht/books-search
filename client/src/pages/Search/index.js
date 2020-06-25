@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import { Container } from "../../components/Grid";
-import Jumbotron from '../../components/Jumbotron';
 import SearchBox from '../../components/SearchBox';
 import BookList from '../../components/BookList';
-import Button from '../../components/Button';
+import { SearchBtn } from '../../components/Button';
 import EmptyList from '../../components/EmptyList'
 import Details from '../../components/Details'
+import AddBookBtn from '../../components/AddButton'
 
 class Search extends Component {
     state = {
@@ -23,7 +23,6 @@ class Search extends Component {
         axios
             .get(url)
             .then(res => {
-                console.log(res);
                 this.displayResults(res.data);
             })
             .catch(err => console.log(err));
@@ -47,7 +46,7 @@ class Search extends Component {
     render() {
         return (
             <Container fluid>
-                <Jumbotron />
+
                 <form className="container searchBox">
                     <div className="form-group">
 
@@ -55,7 +54,7 @@ class Search extends Component {
                             query={this.state.query}
                             handleInputChange={this.handleInputChange}
                         />
-                        <Button
+                        <SearchBtn
                             searchBooks={this.searchBooks}
                         />
                     </div>
@@ -64,7 +63,7 @@ class Search extends Component {
                     <BookList>
                         {this.state.books.map(book => {
                             return (
-                                <div>
+                                <div className="book-details container my-3">
                                     <Details
                                         key={book.id}
                                         authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
@@ -76,7 +75,7 @@ class Search extends Component {
                                             book.volumeInfo.imageLinks.thumbnail : "#"}
                                     />
 
-                                    {/* <AddBookBtn
+                                    <AddBookBtn
                                         authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
                                         title={book.volumeInfo.title}
                                         description={book.volumeInfo.description ?
@@ -85,7 +84,7 @@ class Search extends Component {
                                         thumbnail={book.volumeInfo.imageLinks.thumbnail ?
                                             book.volumeInfo.imageLinks.thumbnail : "#"}
 
-                                    /> */}
+                                    />
                                 </div>
                             )
                         })}

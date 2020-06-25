@@ -1,42 +1,23 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 
-export default function Navbar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link className="navbar-brand" to="/">
-                Google Books Search
-            </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
+import { Navbar, Nav } from 'react-bootstrap'
 
-            <div className="collapse navbar-collapse" id="navbarToggler">
-                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li className="nav-item">
-                        <Link
-                            to="/"
-                            className={
-                                window.location.pathname === "/" || window.location.pathname === "/books"
-                                    ? "nav-link active"
-                                    : "nav-link"
-                            }
-                        >
-                            Search
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link
-                            to="/saved"
-                            className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
-                        >
-                            Saved Books
-                         </Link>
-                    </li>
+export default class NavigationBar extends Component {
 
-                </ul>
+    render() {
+        return (
 
-            </div>
-        </nav>
-    )
+            <Navbar expand="lg" className="navbar-container">
+                <Navbar.Brand href="/">Google Books Search</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link href="/">Toys</Nav.Link>
+                        <Nav.Link href="/bookshelf">Saved</Nav.Link>
+                    </Nav>
+
+                </Navbar.Collapse>
+            </Navbar>
+        )
+    }
 }
