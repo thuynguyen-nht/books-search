@@ -42,7 +42,7 @@ It should automatically open your web browser to [http://localhost:3000/]( http:
       link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
       title: "The Hunger Games"
     }
-    ```
+```
 
 6. Add the following Express routes for your app:
 
