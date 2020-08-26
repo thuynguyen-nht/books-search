@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css'
 
 import { Navbar, Nav } from 'react-bootstrap'
 
@@ -7,7 +8,7 @@ export default class NavigationBar extends Component {
     render() {
         return (
 
-            <Navbar expand="lg" className="navbar-container">
+            <Navbar expand="lg" className="navbar-container" >
                 <Navbar.Brand href="/">Google Books Search</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
