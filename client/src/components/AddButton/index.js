@@ -22,7 +22,7 @@ class AddBookBtn extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="saveBtn">
                 <button onClick={() => { this.postToDB(this.props) }
                 } className="btn btn-lg">
                     Save Book

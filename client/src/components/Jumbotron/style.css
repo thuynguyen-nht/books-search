@@ -1,3 +1,6 @@
 .jumbotron{
-    background: #D2C4BB;
+    background: #DCCFC6;
+   background-image: url(../../image/jumbotronImage.jpg);
+   color: white;
+  
 }

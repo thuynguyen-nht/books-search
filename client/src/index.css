@@ -6,18 +6,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(./image/book-978888.jpg) no-repeat center center fixed;
-  /* background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; */
+  /* background: url(./image/book-978888.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); */
+  background-color: #F3F0E9;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btn{
+background-color: #A6977D;
 }

@@ -1,4 +1,9 @@
 .bg{
-    background-color:#F0EBE7;
+    background-color:#DCCFC6;
     height: 100%;
+}
+
+.saveBtn{
+    text-align: right;
+    padding-bottom: 20px;
 }

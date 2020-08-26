@@ -47,7 +47,7 @@ class Saved extends Component {
                     <BookList>
                         {this.state.savedBooks.map(book => {
                             return (
-                                <div>
+                                <div className="bg">
                                     <Details
                                         key={book._id}
                                         authors={book.authors}

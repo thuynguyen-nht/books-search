@@ -16,7 +16,7 @@ export default function Details(props) {
                 <div className="col-md text-right">
                     <a
                         type="button"
-                        className="btn btn-info mx-1"
+                        className="btn mx-1"
                         href={props.link}
                     >VIEW</a>
                 </div>
