@@ -41,34 +41,37 @@ class Saved extends Component {
 
     render() {
         return (
-            <Container>
+            <div className=" container bg">
+                <Container>
 
-                {this.state.savedBooks.length > 0 ?
-                    <BookList>
-                        {this.state.savedBooks.map(book => {
-                            return (
-                                <div className="bg">
-                                    <Details
-                                        key={book._id}
-                                        authors={book.authors}
-                                        title={book.title}
-                                        description={book.description}
-                                        link={book.link}
-                                        thumbnail={book.thumbnail}
-                                    />
-                                    <RemoveBookBtn
-                                        onClick={() => this.deleteFromDB(book._id)}
-                                    />
-                                </div>
-                            )
+                    {this.state.savedBooks.length > 0 ?
+                        <BookList>
+                            {this.state.savedBooks.map(book => {
+                                return (
+                                    <div className="book-details container bg my-3">
+                                        <Details
+                                            key={book._id}
+                                            authors={book.authors}
+                                            title={book.title}
+                                            description={book.description}
+                                            link={book.link}
+                                            thumbnail={book.thumbnail}
+                                        />
+                                        <RemoveBookBtn
+                                            onClick={() => this.deleteFromDB(book._id)}
+                                        />
+                                    </div>
+                                )
 
-                        })}
-                    </BookList>
-                    :
-                    <EmptyList />
-                }
+                            })}
+                        </BookList>
+                        :
+                        <EmptyList />
+                    }
 
-            </Container>
+                </Container>
+            </div>
+
         );
     }
 }
