@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Container } from "../../components/Grid";
 import Details from "../../components/Details"
 import BookList from '../../components/BookList';
 import axios from "axios";
@@ -41,7 +41,7 @@ class Saved extends Component {
 
     render() {
         return (
-            <div>
+            <Container>
 
                 {this.state.savedBooks.length > 0 ?
                     <BookList>
@@ -68,7 +68,7 @@ class Saved extends Component {
                     <EmptyList />
                 }
 
-            </div>
+            </Container>
         );
     }
 }

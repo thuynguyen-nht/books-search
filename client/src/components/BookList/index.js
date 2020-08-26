@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css'
 
 
 // BookList renders a bootstrap list item
@@ -9,10 +9,3 @@ export default function BookList({ children }) {
     );
 }
 
-// export default function SearchResults() {
-//     return (
-//         <div>
-//             <Details />
-//         </div>
-//     )
-// }

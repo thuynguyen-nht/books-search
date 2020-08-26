@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import './style.css'
 import { Container } from "../../components/Grid";
 import SearchBox from '../../components/SearchBox';
 import BookList from '../../components/BookList';
@@ -44,6 +45,7 @@ class Search extends Component {
     };
 
     render() {
+
         return (
             <Container fluid>
 
@@ -59,39 +61,42 @@ class Search extends Component {
                         />
                     </div>
                 </form>
-                {(this.state.books && this.state.books.length > 0) ?
-                    <BookList>
-                        {this.state.books.map(book => {
-                            return (
-                                <div className="book-details container my-3">
-                                    <Details
-                                        key={book.id}
-                                        authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
-                                        title={book.volumeInfo.title}
-                                        description={book.volumeInfo.description ?
-                                            book.volumeInfo.description : "No Description Available"}
-                                        link={book.volumeInfo.infoLink}
-                                        thumbnail={book.volumeInfo.imageLinks.thumbnail ?
-                                            book.volumeInfo.imageLinks.thumbnail : "#"}
-                                    />
+                <div className="container bg">
 
-                                    <AddBookBtn
-                                        authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
-                                        title={book.volumeInfo.title}
-                                        description={book.volumeInfo.description ?
-                                            book.volumeInfo.description : "No Description Available"}
-                                        link={book.volumeInfo.infoLink}
-                                        thumbnail={book.volumeInfo.imageLinks.thumbnail ?
-                                            book.volumeInfo.imageLinks.thumbnail : "#"}
+                    {(this.state.books && this.state.books.length > 0) ?
+                        <BookList>
+                            {this.state.books.map(book => {
+                                return (
+                                    <div className="book-details container my-3">
+                                        <Details
+                                            key={book.id}
+                                            authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
+                                            title={book.volumeInfo.title}
+                                            description={book.volumeInfo.description ?
+                                                book.volumeInfo.description : "No Description Available"}
+                                            link={book.volumeInfo.infoLink}
+                                            thumbnail={book.volumeInfo.imageLinks.thumbnail ?
+                                                book.volumeInfo.imageLinks.thumbnail : "#"}
+                                        />
 
-                                    />
-                                </div>
-                            )
-                        })}
-                    </BookList>
-                    :
-                    <EmptyList />
-                }
+                                        <AddBookBtn
+                                            authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
+                                            title={book.volumeInfo.title}
+                                            description={book.volumeInfo.description ?
+                                                book.volumeInfo.description : "No Description Available"}
+                                            link={book.volumeInfo.infoLink}
+                                            thumbnail={book.volumeInfo.imageLinks.thumbnail ?
+                                                book.volumeInfo.imageLinks.thumbnail : "#"}
+
+                                        />
+                                    </div>
+                                )
+                            })}
+                        </BookList>
+                        :
+                        <EmptyList />
+                    }
+                </div>
             </Container>
         )
     }
