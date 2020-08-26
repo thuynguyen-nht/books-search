@@ -6,6 +6,7 @@ import axios from "axios";
 import EmptyList from '../../components/EmptyList';
 import { RemoveBookBtn } from '../../components/Button';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class Saved extends Component {

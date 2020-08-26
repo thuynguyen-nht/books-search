@@ -58,5 +58,5 @@ It should automatically open your web browser to [http://localhost:3000/]( http:
 ## Github:
 [books-search](https://github.com/thuynguyen-nht/books-search)
 
-### Visit me at:
+## Visit me at:
 [Github page](https://github.com/thuynguyen-nht)

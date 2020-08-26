@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
-// import NoMatch from "./pages/NoMatch";
 import './App.css';
 import Navbar from "./components/Navbar";
 import { ToastContainer, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Jumbotron from './components/Jumbotron';
 
 function App() {
