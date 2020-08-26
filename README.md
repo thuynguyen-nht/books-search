@@ -44,7 +44,7 @@ It should automatically open your web browser to [http://localhost:3000/]( http:
     }
 ```
 
-6. Add the following Express routes for your app:
+6. Add the following Express routes to Route:
 
 * `/api/books` (get) - Should return all saved books as JSON.
 
